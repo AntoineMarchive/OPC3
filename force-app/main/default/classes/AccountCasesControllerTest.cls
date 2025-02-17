@@ -12,7 +12,7 @@ private class  AccountCasesControllerTest {
     static void testGetCases() {
         Account testAccount =[SELECT Id FROM Account LIMIT 1];
         Test.startTest();
-        List<case> results = AccountCasesController.getCases(testAccount.Id,  sub);
+        List<case> results = AccountCasesController.findCasesBySubject(testAccount.Id,  sub);
         Test.stopTest();
         Assert.areEqual(1, results.size(), 'Should return one case');
 
